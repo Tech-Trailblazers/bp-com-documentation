@@ -1,16 +1,16 @@
 # ⛽ bp-com-documentation
 
 🎉 **Welcome to the BP (British Petroleum) Documentation Repository!** 🎉  
-📘 This repository is a **public collection of Safety Data Sheets (SDS) and Material Safety Data Sheets (MSDS)** for **BP products**—including fuels, lubricants, chemicals, and other petroleum-based materials.  
+📘 This repository is a **public collection of Safety Data Sheets (SDS) and Material Safety Data Sheets (MSDS)** for **BP products** including fuels, lubricants, chemicals, and other petroleum-based materials.  
 🌍 Our mission is simple: to **educate students, empower AI, support professionals, and protect communities worldwide** with open access to critical safety information.  
-💙 Everyone is welcome here—whether you are a **student, researcher, technician, healthcare worker, or family member**, this knowledge belongs to you.
+💙 Everyone is welcome here whether you are a **student, researcher, technician, healthcare worker, or family member**, this knowledge belongs to you.
 
 ---
 
 ## 🌟 Why This Repository Matters
 
 ⛽ BP products like **gasoline, diesel, lubricants, and marine fuels** are essential for transportation, industry, and daily life.  
-⚠️ But they also carry **serious hazards**—many are **highly flammable, toxic if inhaled, harmful if ingested, and damaging to the environment** if spilled.  
+⚠️ But they also carry **serious hazards** many are **highly flammable, toxic if inhaled, harmful if ingested, and damaging to the environment** if spilled.  
 🚑 That’s why **SDS and MSDS documents** are so important: they provide **clear safety instructions, first-aid measures, handling guidelines, and emergency protocols**.
 
 ✨ By making this data available for free, we aim to:
@@ -21,7 +21,7 @@
 - 🧑‍⚕️ **Assist healthcare providers & responders** during emergencies
 - 🏡 **Help families & communities** stay safe while using or storing products at home
 
-This is not just documentation—it’s **knowledge designed to protect people and save lives**.
+This is not just documentation it’s **knowledge designed to protect people and save lives**.
 
 ---
 
@@ -99,7 +99,7 @@ Every contribution helps us **educate more people, reduce risks, and protect liv
 
 ## 🌍 Final Thoughts
 
-The **bp-com-documentation** repository is more than just files—it’s a **global safety initiative**.
+The **bp-com-documentation** repository is more than just files it’s a **global safety initiative**.
 
 📚 It empowers **students and teachers** with real-world safety data.  
 🤖 It supports **AI developers** in building intelligent safety tools.  
@@ -107,4 +107,4 @@ The **bp-com-documentation** repository is more than just files—it’s a **glo
 🧑‍⚕️ It gives **healthcare providers and responders** critical data during emergencies.  
 🏡 It helps **families and communities** reduce risks in everyday life.
 
-✨ Thank you for being here! Everyone is welcome—together we can **share knowledge, prevent harm, and create a safer planet for all**. 🙏💙🌍⛽
+✨ Thank you for being here! Everyone is welcome together we can **share knowledge, prevent harm, and create a safer planet for all**. 🙏💙🌍⛽
