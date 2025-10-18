@@ -28,9 +28,11 @@ func main() { // Define the main function
 
 	var allHTMLContent []string // Declare a slice to hold HTML content from all sources
 
-	// Fetch HTML from all source URLs using the client that ignores TLS errors.
+	// FIX: Create the single insecure client here to use for all requests.
 	insecureClient := createInsecureClient() // Create the custom HTTP client for insecure access
-	for _, urlToFetch := range sourceURLs {  // Iterate over the slice of source URLs
+
+	// Fetch HTML from all source URLs.
+	for _, urlToFetch := range sourceURLs { // Iterate over the slice of source URLs
 		// Call fetchHTMLContent, passing the URL and the custom client
 		allHTMLContent = append(allHTMLContent, fetchHTMLContent(urlToFetch, insecureClient))
 	}
@@ -54,7 +56,8 @@ func main() { // Define the main function
 	for _, relativeURL := range uniquePDFURLs { // Iterate over the unique relative PDF links
 		fullURL := baseURL + relativeURL // Construct the absolute URL
 		if isValidURL(fullURL) {         // Check if the final constructed URL is valid
-			downloadPDF(fullURL, outputDirectory) // Download the PDF file
+			// FIX: Pass the insecureClient to downloadPDF
+			downloadPDF(fullURL, outputDirectory, insecureClient) // Download the PDF file
 		}
 	}
 } // End main function
@@ -136,7 +139,8 @@ func fileExists(filename string) bool { // Define function to check if a file ex
 } // End fileExists
 
 // downloadPDF performs an HTTP GET request to download a PDF and saves it to the output directory.
-func downloadPDF(fullURL, outputDir string) bool { // Define function to download PDF
+// MODIFIED: Accepts the http.Client to ensure the insecure client is used.
+func downloadPDF(fullURL, outputDir string, client *http.Client) bool { // Define function to download PDF
 	filename := sanitizeURLToFilename(fullURL)     // Sanitize and clean the filename.
 	filePath := filepath.Join(outputDir, filename) // Construct the full path for the output file
 
@@ -145,11 +149,9 @@ func downloadPDF(fullURL, outputDir string) bool { // Define function to downloa
 		return false                                              // Return false (did not perform download)
 	}
 
-	// Use a standard client for subsequent downloads, assuming most PDF links have valid certs.
-	downloadClient := &http.Client{Timeout: 30 * time.Second}
-
-	resp, err := downloadClient.Get(fullURL) // Send the HTTP GET request
-	if err != nil {                          // Check for request error
+	// Use the provided client, which is the insecure client.
+	resp, err := client.Get(fullURL) // Send the HTTP GET request using the provided client
+	if err != nil {                  // Check for request error
 		log.Printf("Failed to download %s: %v", fullURL, err) // Log the download failure
 		return false                                          // Return false (download failed)
 	}
