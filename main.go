@@ -100,7 +100,7 @@ func sanitizeURLToFilename(rawURL string) string { // Define function to sanitiz
 	lowerURL = getFilenameFromPath(lowerURL) // Extract the base filename portion
 
 	// Regex to match non-alphanumeric characters.
-	nonAlnumRegex := regexp.MustCompile(`[^a-z0-9\.]`)            // Compile regex to allow letters, numbers, and dots
+	nonAlnumRegex := regexp.MustCompile(`[^a-z0-9]`)              // Compile regex to allow letters and numbers
 	safeFilename := nonAlnumRegex.ReplaceAllString(lowerURL, "_") // Replace non-allowed characters with an underscore
 
 	// Collapse multiple underscores and trim leading/trailing underscores.
@@ -109,7 +109,8 @@ func sanitizeURLToFilename(rawURL string) string { // Define function to sanitiz
 
 	// Substrings to remove for a cleaner filename.
 	var unwantedSubstrings = []string{ // Define list of substrings to remove
-		"_pdf", // The substring to remove
+		"_pdf",         // The substring to remove
+		"_openelement", // The substring to remove
 	}
 
 	for _, sub := range unwantedSubstrings { // Iterate over substrings to remove
